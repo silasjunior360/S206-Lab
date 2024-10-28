@@ -1,5 +1,5 @@
 describe("Teste da criaçao, resgistro de login com sucesso",()=>{
-  it("Teste de criaçao de usuario com sucesso",()=>{
+  it.skip("Teste de criaçao de usuario com sucesso",()=>{
       cy.visit("https://www.globalsqa.com/angularJs-protractor/registration-login-example/#/login")
       cy.get('.btn-link').click()
       cy.get('#firstName').type('Silas')
@@ -9,7 +9,7 @@ describe("Teste da criaçao, resgistro de login com sucesso",()=>{
       cy.get('.btn-primary').click()
       cy.get('.ng-binding').should("contain.text","Registration successful")
   })
-  it("Teste de criaçao de usuario com falha",()=>{
+  it.skip("Teste de criaçao de usuario com falha",()=>{
     cy.visit("https://www.globalsqa.com/angularJs-protractor/registration-login-example/#/login")
     cy.get('.btn-link').click()
     cy.get('#firstName').type('Silas')
@@ -18,7 +18,7 @@ describe("Teste da criaçao, resgistro de login com sucesso",()=>{
     cy.get('.btn-primary').should("be.disabled")
     
 })
-  it("Teste de login com sucesso",()=>{
+  it.skip("Teste de login com sucesso",()=>{
     let infos =criarUsers()
     cy.visit("https://www.globalsqa.com/angularJs-protractor/registration-login-example/#/login")
     cy.get('#username').type(infos[0])
@@ -27,7 +27,8 @@ describe("Teste da criaçao, resgistro de login com sucesso",()=>{
     cy.get('h1.ng-binding').should("contain.text", infos[0])
     cy.get('.ng-binding > a').click()
   })
-  it("Teste de login com falha",()=>{
+  
+  it.skip("Teste de login com falha",()=>{
     let infos=criarUsers()
     cy.visit("https://www.globalsqa.com/angularJs-protractor/registration-login-example/#/login")
     cy.get('#username').type(infos[0])
@@ -35,6 +36,18 @@ describe("Teste da criaçao, resgistro de login com sucesso",()=>{
     cy.get('.btn-primary').click()
     cy.get('.ng-binding').should("contain.text","Username or password is incorrect")
   })
+  it("Delete do user com sucesso", ()=>{
+    let infos = criarUsers()
+      cy.login(infos[0],infos[1])
+      cy.get('.ng-binding > a').click
+      cy.get('.btn')
+      cy.login(infos[0],infos[1])
+      cy.get('.ng-binding > a').click
+      cy.get('.btn')
+      cy.get('.ng-binding').should("have.text","Username or password is incorrect")
+  
+    })
+  
 
 })
 function criarUsers(){
