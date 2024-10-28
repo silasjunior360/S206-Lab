@@ -1,0 +1,34 @@
+{
+	"info": {
+		"_postman_id": "7c99a509-f007-48cc-b630-da777f955e18",
+		"name": "Pokemon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39336263"
+	},
+	"item": [
+		{
+			"name": "localiza piplup",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "nao existe pokemon",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "endpoint falha ao localizar",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
